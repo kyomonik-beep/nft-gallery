@@ -15,7 +15,7 @@ export async function resolveENS(nameOrAddress: string): Promise<string | null> 
     }
     
     // Attempt to resolve ENS Name (e.g. vitalik.eth)
-    if (nameOrAddress.endsWith(".eth")) {
+    if (String(nameOrAddress).endsWith(".eth")) {
       const address = await provider.resolveName(nameOrAddress);
       return address;
     }
